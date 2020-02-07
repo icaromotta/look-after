@@ -7,17 +7,20 @@
         <a class="navbar-brand" href="#">Look After</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contato</a>
+                <a class="nav-link" [routerLink]="['/sobre']">Sobre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/contato']">Contato</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
 
-        <button class="btn btn-outline-primary mr-sm-2 my-2 my-sm-0" type="submit">Cadastro</button>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Acesso</button>
+        <button class="btn btn-outline-primary mr-sm-2 my-2 my-sm-0" [routerLink]="['/cadastro']">Cadastro</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/acesso']">Acesso</button>
     </div>
 </nav>
