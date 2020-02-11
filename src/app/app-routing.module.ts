@@ -1,3 +1,4 @@
+import { PanelComponent } from './pages/panel/panel.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './shared/forms/login/login.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -22,6 +23,9 @@ const routes: Routes = [
   }, {
     path: 'home',
     component: HomeComponent
+  }, {
+    path: 'painel',
+    component: PanelComponent
   }
 ];
 

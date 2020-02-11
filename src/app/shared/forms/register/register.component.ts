@@ -41,9 +41,8 @@ export class RegisterComponent implements OnInit {
     this.userService.add(this.registrationForm.value)
       .subscribe((response) => {
         this.registrationForm.reset();
-        this.router.navigate(['/contato'])
+        this.router.navigate(['/painel'])
       },
       (error: any) => alert('erro'));
-      
   }
 }

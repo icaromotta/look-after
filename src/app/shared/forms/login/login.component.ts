@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       .subscribe((response) => {
         
         if(response.ok === true) {
-          this.router.navigate(['/contato'])
+          this.router.navigate(['/painel'])
         } else {
           Swal.fire(
             'Acesso negado',

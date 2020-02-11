@@ -13,6 +13,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PanelComponent } from './pages/panel/panel.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     LoginComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    PanelComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
