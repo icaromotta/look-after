@@ -38,5 +38,5 @@
             no mínimo 6 caracteres.</small>
     </div>
 
-    <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid">Enviar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid" (click)="onSubmit()">Enviar</button>
 </form>

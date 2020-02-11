@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {UserService } from '../../../services/user.service';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-register',
@@ -10,7 +12,9 @@ export class RegisterComponent implements OnInit {
 
   public registrationForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private userService: UserService,
+              private router: Router) { }
 
   ngOnInit() {
     this.registrationForm = this.formBuilder.group({
@@ -30,5 +34,16 @@ export class RegisterComponent implements OnInit {
       'has-error': this.verificaValidTouched(campo),
       'has-feedback': this.verificaValidTouched(campo)
     };
+  }
+
+  onSubmit() {
+
+    this.userService.add(this.registrationForm.value)
+      .subscribe((response) => {
+        this.registrationForm.reset();
+        this.router.navigate(['/contato'])
+      },
+      (error: any) => alert('erro'));
+      
   }
 }

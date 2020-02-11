@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +13,9 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private userService: UserService,
+              private router: Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -28,6 +33,24 @@ export class LoginComponent implements OnInit {
       'has-error': this.verificaValidTouched(campo),
       'has-feedback': this.verificaValidTouched(campo)
     };
+  }
+
+  onSubmit() {
+
+    this.userService.login(this.loginForm.value)
+      .subscribe((response) => {
+        
+        if(response.ok === true) {
+          this.router.navigate(['/contato'])
+        } else {
+          Swal.fire(
+            'Acesso negado',
+            'Verifique suas credenciais!',
+            'error'
+          )
+        }
+      },
+      (error: any) => console.log('>>>', error));
   }
 
 }
