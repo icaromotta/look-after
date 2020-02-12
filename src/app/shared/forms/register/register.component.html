@@ -1,0 +1,42 @@
+<form [formGroup]="registrationForm" class="container mt-5">
+    <div class="form-group" [ngClass]="aplicaCssErro('name')">
+        <label for="exampleInputName">Nome </label>
+        <input type="text" class="form-control" formControlName="name" id="exampleInputName" aria-describedby="name" maxlength="30">
+        <small id="name" class="form-text text-muted" *ngIf="verificaValidTouched('name')">O campo nome é
+            obrigatório.</small>
+        <small class="form-text text-muted"
+            *ngIf="verificaValidTouched('name') && registrationForm.controls['name'].hasError('minlength')">
+            O tamanho mínimo para o nome é de 3 caracteres.
+        </small>
+    </div>
+    <div class="form-group" [ngClass]="aplicaCssErro('phone')">
+        <label for="exampleInputPhone">Telefone </label>
+        <input type="text" class="form-control" formControlName="phone" id="exampleInputPhone" aria-describedby="phone" maxlength="9">
+        <small id="name" class="form-text text-muted" *ngIf="verificaValidTouched('phone')">O campo
+            telefone é
+            obrigatório.</small>
+        <small id="name" class="form-text text-muted"
+            *ngIf="registrationForm.controls['phone'].hasError('pattern') || registrationForm.controls['phone'].hasError('minlength')">O telefone deve possuir 9 dígitos numéricos.</small>
+    </div>
+    <div class="form-group" [ngClass]="aplicaCssErro('email')">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted" *ngIf="verificaValidTouched('email')">O campo email é
+            obrigatório.</small>
+        <small id="emailHelp" class="form-text text-muted" *ngIf="verificaValidTouched('email')">Formato de e-mail
+            inválido.</small>
+    </div>
+    <div class="form-group" [ngClass]="aplicaCssErro('password')">
+        <label for="exampleInputPassword1">Senha</label>
+        <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
+        <small id="emailHelp" class="form-text text-muted" *ngIf="verificaValidTouched('password')">É necessário que
+            crie uma senha.</small>
+        <small id="emailHelp" class="form-text text-muted"
+            *ngIf="verificaValidTouched('password') && registrationForm.controls['name'].hasError('minlength')">A senha
+            precisa ter
+            no mínimo 6 caracteres.</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid" (click)="onSubmit()">Enviar</button>
+</form>
