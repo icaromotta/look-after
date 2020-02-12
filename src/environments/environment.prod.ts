@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API: '/'
+  API: 'https://stark-everglades-58615.herokuapp.com/'
 };
