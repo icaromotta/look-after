@@ -20,7 +20,6 @@ export class CarouselComponent implements OnInit {
     size: 'G',
     image: '../../../assets/fralda_g.png'
   }, {
-  },{
     brand: 'consectetur',
     size: 'M',
     image: '../../../assets/fralda_m.png'
