@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API: 'http://localhost:3000/'
+  API: 'https://stark-everglades-58615.herokuapp.com/'
 };
 
 /*
