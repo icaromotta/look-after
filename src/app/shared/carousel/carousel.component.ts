@@ -11,6 +11,7 @@ export class CarouselComponent implements OnInit {
     brand: 'ipsum',
     size: 'P',
     image: '../../../assets/fralda_p.png'
+<<<<<<< HEAD
   }, {
     brand: 'consectetur',
     size: 'M',
@@ -20,6 +21,17 @@ export class CarouselComponent implements OnInit {
     size: 'G',
     image: '../../../assets/fralda_g.png'
   }, {
+=======
+  },{
+    brand: 'consectetur',
+    size: 'M',
+    image: '../../../assets/fralda_m.png'
+  },{
+    brand: 'adipiscing',
+    size: 'G',
+    image: '../../../assets/fralda_g.png'
+  },{
+>>>>>>> 03622a7fccc6fa0b4746491ad7116a1bc80826d8
     brand: 'mollit',
     size: 'GG',
     image: '../../../assets/fralda_gg.png'
