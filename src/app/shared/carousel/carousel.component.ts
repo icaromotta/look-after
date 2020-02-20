@@ -35,6 +35,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit() {
+    this.count
     this.currentImage = this.diapers[0].image
     this.rotate()
   }
