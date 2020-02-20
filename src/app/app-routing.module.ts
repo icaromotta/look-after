@@ -9,6 +9,12 @@ import { RegisterComponent } from './shared/forms/register/register.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: HomeComponent
+  },{
+    path: 'home',
+    component: HomeComponent
+  }, {
     path: 'sobre',
     component: AboutComponent
   }, {
@@ -20,9 +26,6 @@ const routes: Routes = [
   }, {
     path: 'acesso',
     component: LoginComponent
-  }, {
-    path: 'home',
-    component: HomeComponent
   }, {
     path: 'painel',
     component: PanelComponent
