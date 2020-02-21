@@ -41,8 +41,6 @@ export class CarouselComponent implements OnInit, OnDestroy {
   }
 
   pouseTimer() {
-    this.count--
-    this.currentImage = this.diapers[this.count].image
     clearInterval(this.timerInterval)
   }
 
