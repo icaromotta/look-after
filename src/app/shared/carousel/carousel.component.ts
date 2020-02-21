@@ -37,23 +37,23 @@ export class CarouselComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.count
     this.currentImage = this.diapers[0].image
-    this.rotate()
+    this.startRotation()
   }
-
-  pouseTimer() {
-    clearInterval(this.timerInterval)
-  }
-
+  
   ngOnDestroy() {
     clearInterval(this.timerInterval)
   }
 
-  rotate() {
+  startRotation() {
     this.timerInterval = setInterval(() => {
       this.currentImage = this.diapers[this.count++].image
       if (this.count >= this.diapers.length) {
         this.count = 0
       }
     }, 2000);
+  }
+
+  pouseRotation() {
+    clearInterval(this.timerInterval)
   }
 }
