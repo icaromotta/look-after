@@ -6,19 +6,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UtilService {
 
-  private readonly API = `${environment.API}users`;
+  private readonly API = `${environment.API}utils/`;
 
   constructor(private http: HttpClient) { }
 
-  add(data: any) {
-    
-    return this.http.post<any>(`${this.API}/create`, data)
-  }
+  contact(data: any) {
 
-  login(data: any) {
-
-    return this.http.post<any>(`${this.API}/login`, data)
+    return this.http.post<any>(`${this.API}contact`, data)
   }
 }

@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, Validators.required]
-    });
+    })
   }
 
   verificaValidTouched(campo: any) {
@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-
     this.userService.login(this.loginForm.value)
       .subscribe((response) => {
         
